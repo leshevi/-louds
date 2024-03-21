@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Облака</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- This is a recreation of Unfold's (https://dribbble.com/unfold) parallax scene: https://cdn.dribbble.com/users/14268/screenshots/3275340/northface.gif -->
+<div class="scrollDist"></div>
+<div class="main">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <mask id="m">
+      <g class="cloud1">
+        <rect fill="#fff" width="100%" height="801" y="799" />
+        <image xlink:href="cloud1Mask.jpg" width="1200" height="800"/>
+      </g>
+    </mask>
+    
+    <image class="sky" xlink:href="sky.jpg"  width="1200" height="590" />
+    <image class="mountBg" xlink:href="mountBg.png" width="1200" height="800"/>    
+    <image class="mountMg" xlink:href="mountMg.png" width="1200" height="800"/>    
+    <image class="cloud2" xlink:href="cloud2.png" width="1200" height="800"/>    
+    <image class="mountFg" xlink:href="mountFg.png" width="1200" height="800"/>
+    <image class="cloud1" xlink:href="cloud1.png" width="1200" height="800"/>
+    <image class="cloud3" xlink:href="cloud3.png" width="1200" height="800"/>
+    <text fill="#fff" x="450" y="200">ВНИЗ</text>
+    <polyline class="arrow" fill="#fff" points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250" />
+    
+    <g mask="url(#m)">
+      <rect fill="#fff" width="100%" height="100%" />      
+      <text x="400" y="200" fill="#162a43">ВВЕРХ</text>
+    </g>
+    
+    <rect id="arrowBtn" width="100" height="100" opacity="0" x="550" y="220" style="cursor:pointer"/>
+  </svg>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
